@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Opportunities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-container input, .search-container select {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-card {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #004aad;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Projects Opportunities</div>
+        <nav>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <!-- Back to Dashboard Link -->
+        <a href="index.html" class="back-link">Back to home</a>
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <h3>Search and Filter Projects</h3>
+            <input type="text" id="searchText" placeholder="Search by Project Name..." oninput="filterProjects()">
+            <select id="industryFilter" onchange="filterProjects()">
+                <option value="">Select Industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Education">Education</option>
+                <option value="Agriculture">Agriculture</option>
+            </select>
+            <select id="gainFilter" onchange="filterProjects()">
+                <option value="">Select Gain %</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+                <option value="25">25%</option>
+                <option value="30">30%</option>
+            </select>
+        </div>
+
+        <!-- Project Opportunities Section -->
+        <div class="section">
+            <h2>Project Opportunities</h2>
+            <div class="projects-list" id="projectsList">
+                <div class="project-card" data-name="Startup X" data-industry="Education" data-gain="10">
+                    <h3>Startup X</h3>
+                    <p><strong>Industry:</strong> Education</p>
+                    <p><strong>Funding Needed:</strong> $100,000</p>
+                    <p><strong>Gain:</strong> 10%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Startup Y" data-industry="Finance" data-gain="15">
+                    <h3>Startup Y</h3>
+                    <p><strong>Industry:</strong> Finance</p>
+                    <p><strong>Funding Needed:</strong> $200,000</p>
+                    <p><strong>Gain:</strong> 15%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Startup Z" data-industry="Agriculture" data-gain="20">
+                    <h3>Startup Z</h3>
+                    <p><strong>Industry:</strong> Agriculture</p>
+                    <p><strong>Funding Needed:</strong> $150,000</p>
+                    <p><strong>Gain:</strong> 20%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Elite Entrepreneur Projects Section -->
+        <div class="section">
+            <h2>Elite Entrepreneur Projects</h2>
+            <div class="projects-list">
+                <div class="project-card" data-name="Elite Startup A" data-industry="Technology" data-gain="25">
+                    <h3>Elite Startup A</h3>
+                    <p><strong>Industry:</strong> Technology</p>
+                    <p><strong>Funding Needed:</strong> $500,000</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Elite Startup B" data-industry="Healthcare" data-gain="20">
+                    <h3>Elite Startup B</h3>
+                    <p><strong>Industry:</strong> Healthcare</p>
+                    <p><strong>Funding Needed:</strong> $600,000</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Elite Startup C" data-industry="Renewable Energy" data-gain="30">
+                    <h3>Elite Startup C</h3>
+                    <p><strong>Industry:</strong> Renewable Energy</p>
+                    <p><strong>Funding Needed:</strong> $450,000</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Gain Projects Section -->
+        <div class="section">
+            <h2>Top Gain Projects</h2>
+            <div class="projects-list">
+                <div class="project-card" data-name="Top Gain Project 1" data-industry="Finance" data-gain="20">
+                    <h3>Top Gain Project 1</h3>
+                    <p><strong>Industry:</strong> Finance</p>
+                    <p><strong>Gains:</strong> 20%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Top Gain Project 2" data-industry="Technology" data-gain="25">
+                    <h3>Top Gain Project 2</h3>
+                    <p><strong>Industry:</strong> Technology</p>
+                    <p><strong>Gains:</strong> 25%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+
+                <div class="project-card" data-name="Top Gain Project 3" data-industry="Healthcare" data-gain="30">
+                    <h3>Top Gain Project 3</h3>
+                    <p><strong>Industry:</strong> Healthcare</p>
+                    <p><strong>Gains:</strong> 30%</p>
+                    <p><a href="project-detail.html">View Details</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Investor-Investment Platform. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function filterProjects() {
+            const searchText = document.getElementById('searchText').value.toLowerCase();
+            const industryFilter = document.getElementById('industryFilter').value;
+            const gainFilter = parseFloat(document.getElementById('gainFilter').value);
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const industry = card.getAttribute('data-industry');
+                const gain = parseFloat(card.getAttribute('data-gain'));
+                
+                // Check if the card matches the search and filter criteria
+                const matchesSearch = name.includes(searchText);
+                const matchesIndustry = industryFilter ? industry === industryFilter : true;
+                const matchesGain = isNaN(gainFilter) || gain >= gainFilter;
+                
+                // Show or hide the card based on the match
+                if (matchesSearch && matchesIndustry && matchesGain) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

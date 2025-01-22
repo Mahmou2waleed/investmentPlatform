@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup X - Project Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #004aad;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-info h3 {
+            color: #333;
+        }
+
+        .project-info p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .video-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 5px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .action-buttons button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #004aad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #003b8f;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Investor Dashboard</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <!-- Back to Opportunities Link -->
+        <a href="projects-list.html" class="back-link">Back to Opportunities</a>
+
+        <!-- Project X Details -->
+        <div class="section">
+            <h2>Startup X - Project Details</h2>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <h2>Project Overview Video</h2>
+                <iframe src="https://www.youtube.com/embed/" title="Project X Overview Video"></iframe>
+            </div>
+
+            <div class="project-info">
+                <h3>Overview</h3>
+                <p><strong>Industry:</strong> Education</p>
+                <p><strong>Funding Needed:</strong> $100,000</p>
+                <p><strong>About Startup X:</strong> Startup X is revolutionizing the education sector by providing an AI-driven learning platform that personalizes content for each student.</p>
+            </div>
+
+            <div class="project-info">
+                <h3>Key Objectives</h3>
+                <ul>
+                    <li>Develop a personalized learning system powered by AI.</li>
+                    <li>Launch in 3 major cities within the next year.</li>
+                    <li>Secure strategic partnerships with educational institutions.</li>
+                </ul>
+            </div>
+
+            <div class="project-info">
+                <h3>Team</h3>
+                <p><strong>CEO:</strong> Jane Doe</p>
+                <p><strong>CTO:</strong> John Smith</p>
+                <p><strong>Lead Developer:</strong> Sarah Lee</p>
+            </div>
+
+            <div class="project-info">
+                <h3>Funding Breakdown</h3>
+                <p>The funding will be allocated to the following areas:</p>
+                <ul>
+                    <li>Product Development: $40,000</li>
+                    <li>Marketing: $30,000</li>
+                    <li>Operational Costs: $20,000</li>
+                    <li>Miscellaneous: $10,000</li>
+                </ul>
+            </div>
+
+            <div class="project-info">
+                <h3>Projected Return on Investment (ROI)</h3>
+                <p>We expect a 15% ROI within the first year as we scale our platform across the country.</p>
+            </div>
+
+            <div class="project-info">
+                <h3>Investment Options</h3>
+                <p>You can contribute to the funding with various investment options, including equity or convertible notes. For more information, please reach out to our team directly.</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button onclick="alert('You are now following this project!')">Follow This Project</button>
+            <button onclick="window.location.href='send-offer.html'">Send an Offer</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Investor-Investment Platform. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

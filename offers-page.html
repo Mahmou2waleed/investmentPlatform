@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers for Project X</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #004aad;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .offer {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .offer .offer-details {
+            font-weight: bold;
+            color: #004aad;
+        }
+
+        .offer-buttons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .offer-buttons button {
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .agree-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .agree-btn:hover {
+            background-color: #218838;
+        }
+
+        .refuse-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .refuse-btn:hover {
+            background-color: #c82333;
+        }
+
+        .discuss-btn {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .discuss-btn:hover {
+            background-color: #e0a800;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Investor Dashboard</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="project-detail.html" class="back-link">Back to Project Details</a>
+
+        <div class="section">
+            <h2>Offers for your Project</h2>
+            
+            <!-- Offer List -->
+            <div class="offer">
+                <h3>Offer from Investor A</h3>
+                <p><span class="offer-details">Offer Amount:</span> $50,000</p>
+                <p><span class="offer-details">Investment Type:</span> Equity</p>
+                <p><span class="offer-details">Message:</span> "Excited to partner with Startup X, looking forward to further discussions!"</p>
+                
+                <!-- Buttons for Agree, Refuse, Discuss -->
+                <div class="offer-buttons">
+                    <button class="agree-btn" onclick="handleAgree('Investor A')">Agree</button>
+                    <button class="refuse-btn" onclick="handleRefuse('Investor A')">Refuse</button>
+                    <button class="discuss-btn" onclick="handleDiscuss('Investor A')">Discuss</button>
+                </div>
+            </div>
+
+            <div class="offer">
+                <h3>Offer from Investor B</h3>
+                <p><span class="offer-details">Offer Amount:</span> $100,000</p>
+                <p><span class="offer-details">Investment Type:</span> Convertible Note</p>
+                <p><span class="offer-details">Message:</span> "I believe in the long-term potential of AI-driven education solutions!"</p>
+                
+                <!-- Buttons for Agree, Refuse, Discuss -->
+                <div class="offer-buttons">
+                    <button class="agree-btn" onclick="handleAgree('Investor B')">Agree</button>
+                    <button class="refuse-btn" onclick="handleRefuse('Investor B')">Refuse</button>
+                    <button class="discuss-btn" onclick="handleDiscuss('Investor B')">Discuss</button>
+                </div>
+            </div>
+
+            <div class="offer">
+                <h3>Offer from Investor C</h3>
+                <p><span class="offer-details">Offer Amount:</span> $30,000</p>
+                <p><span class="offer-details">Investment Type:</span> Equity</p>
+                <p><span class="offer-details">Message:</span> "I would like to know more about the ROI projections before committing."</p>
+                
+                <!-- Buttons for Agree, Refuse, Discuss -->
+                <div class="offer-buttons">
+                    <button class="agree-btn" onclick="handleAgree('Investor C')">Agree</button>
+                    <button class="refuse-btn" onclick="handleRefuse('Investor C')">Refuse</button>
+                    <button class="discuss-btn" onclick="handleDiscuss('Investor C')">Discuss</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Investor-Investment Platform. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function handleAgree(investor) {
+            alert('You have agreed to the offer from ' + investor + '.');
+            // You can add the logic to update the status in your backend or redirect to a confirmation page
+            window.location.href = 'agreement-page.html'; // Example redirection
+        }
+
+        function handleRefuse(investor) {
+            alert('You have refused the offer from ' + investor + '.');
+            // You can add logic to notify the investor about the refusal
+            window.location.href = 'project-detail.html'; // Example redirection
+        }
+
+        function handleDiscuss(investor) {
+            alert('You wish to discuss the offer with ' + investor + '.');
+            // You can open a chat window or redirect to a discussion page
+            window.location.href = 'chat-page.html'; // Example redirection
+        }
+    </script>
+</body>
+</html>

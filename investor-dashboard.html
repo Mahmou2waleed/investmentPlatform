@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .welcome {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .welcome h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio, .opportunities, .notifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .card {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .analytics {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .analytics .chart {
+            flex: 1;
+            background: #f9f9f9;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Investor Dashboard</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="welcome">
+            <h1>Welcome, [Investor Name]</h1>
+            <p>Here's an overview of your investments and opportunities.</p>
+        </div>
+
+        <!-- Investment Portfolio -->
+        <div class="section">
+            <h2>Investment Portfolio</h2>
+            <div class="portfolio">
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p><strong>Industry:</strong> Technology</p>
+                    <p><strong>Invested:</strong> $50,000</p>
+                    <p><strong>ROI:</strong> 10%</p>
+                </div>
+                <div class="card">
+                    <h3>Project B</h3>
+                    <p><strong>Industry:</strong> Healthcare</p>
+                    <p><strong>Invested:</strong> $30,000</p>
+                    <p><strong>ROI:</strong> 15%</p>
+                </div>
+                <div class="card">
+                    <h3>Project C</h3>
+                    <p><strong>Industry:</strong> Renewable Energy</p>
+                    <p><strong>Invested:</strong> $40,000</p>
+                    <p><strong>ROI:</strong> 12%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Opportunities -->
+        <div class="section">
+        <h2>New Opportunities</h2>
+        <div class="opportunities">
+            <div class="card">
+                <h3>Startup X</h3>
+                <p><strong>Industry:</strong> Education</p>
+                <p><strong>Funding Needed:</strong> $100,000</p>
+                <p><a href="project-detail.html">Learn More</a></p> <!-- Updated link -->
+            </div>
+            <div class="card">
+                <h3>Startup Y</h3>
+                <p><strong>Industry:</strong> Finance</p>
+                <p><strong>Funding Needed:</strong> $200,000</p>
+                <p><a href="project-detail.html">Learn More</a></p> <!-- Updated link -->
+            </div>
+            <div class="card">
+                <h3>Startup Z</h3>
+                <p><strong>Industry:</strong> Agriculture</p>
+                <p><strong>Funding Needed:</strong> $150,000</p>
+                <p><a href="project-detail.html">Learn More</a></p> <!-- Updated link -->
+            </div>
+        </div>
+    </div>
+
+        <!-- Notifications -->
+        <div class="section">
+            <h2>Notifications</h2>
+            <ul>
+                <li>Project A has reached 80% funding completion.</li>
+                <li>Startup X is trending in the Education sector.</li>
+                <li>Your investment in Project B earned a 15% ROI.</li>
+            </ul>
+        </div>
+
+        <!-- Analytics -->
+        <div class="section">
+            <h2>Analytics</h2>
+            <div class="analytics">
+                <div class="chart">
+                    <p>ROI Chart (Placeholder)</p>
+                </div>
+                <div class="chart">
+                    <p>Industry Breakdown (Placeholder)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Investor-Investment Platform. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

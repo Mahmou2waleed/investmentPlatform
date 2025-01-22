@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Investor Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .helper-text {
+            color: #555;
+        }
+
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .flex-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        .form-actions button {
+            background-color: #28a745;
+            color: white;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-actions button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create Investor Profile</h1>
+    </header>
+    <div class="container">
+        <form id="investor-form">
+            <!-- Personal Information -->
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <!-- Investment Preferences -->
+            <h2>Investment Preferences</h2>
+            <div class="form-group">
+                <label for="industry-preferences">Industry Preferences</label>
+                <select id="industry-preferences" name="industry_preferences[]" multiple required>
+                    <option value="technology">Technology</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="renewable-energy">Renewable Energy</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="finance">Finance</option>
+                    <option value="agriculture">Agriculture</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="retail">Retail</option>
+                    <option value="transportation">Transportation</option>
+                </select>
+                <small class="helper-text">Hold down Ctrl (or Cmd on Mac) to select multiple options.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="investment-range">Investment Amount Range</label>
+                <div class="flex-group">
+                    <input type="number" id="min-investment" name="min_investment" placeholder="Minimum Amount ($)" required>
+                    <input type="number" id="max-investment" name="max_investment" placeholder="Maximum Amount ($)" required>
+                </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="investment-objectives">Investment Objectives</label>
+                <textarea id="investment-objectives" name="investment_objectives" placeholder="E.g., Generate ROI, Support innovative ideas, Build a diverse portfolio" required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+                <button type="submit">Submit Profile</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('investor-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            window.location.href = 'investor-dashboard.html';
+        });
+    </script>
+</body>
+</html>

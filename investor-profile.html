@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Investor Profile</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		header {
+			background-color: #004aad;
+			color: white;
+			padding: 1.5rem;
+			text-align: center;
+		}
+
+		.container {
+			padding: 2rem 1rem;
+			max-width: 700px;
+			margin: 0 auto;
+		}
+
+		.profile-card {
+			background-color: #ffffff;
+			padding: 1.5rem;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+
+		.profile-card img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			margin-bottom: 1rem;
+			border: 2px solid #ddd;
+		}
+
+		.profile-card h1 {
+			margin-bottom: 0.5rem;
+			color: #333;
+		}
+
+		.profile-card p {
+			margin: 0.5rem 0;
+			color: #555;
+		}
+
+		.profile-card .highlight {
+			color: #004aad;
+			font-weight: bold;
+		}
+
+		.details {
+			margin-top: 2rem;
+		}
+
+		.details h2 {
+			color: #004aad;
+			border-bottom: 2px solid #004aad;
+			padding-bottom: 0.5rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+
+		.details ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		.details ul li {
+			background-color: #f9f9f9;
+			margin-bottom: 1rem;
+			padding: 1rem;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		.details ul li span {
+			font-weight: bold;
+		}
+
+		.back-link {
+			display: inline-block;
+			margin-top: 1.5rem;
+			padding: 0.5rem 1rem;
+			background-color: #004aad;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+
+		.back-link:hover {
+			background-color: #003680;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Investor Profile</h1>
+	</header>
+
+	<div class="container">
+		<div class="profile-card">
+			<img id="investorImage" alt="Investor Profile Picture">
+			<h1 id="investorName">Investor Name</h1>
+			<p><strong>Industry:</strong> <span id="investorIndustry"></span></p>
+			<p><strong>Location:</strong> <span id="investorLocation"></span></p>
+			<p><strong>Funding Stage:</strong> <span id="investorStage"></span></p>
+			<p><strong>Investment Amount:</strong> <span id="investorInvestment"></span></p>
+		</div>
+
+		<div class="details">
+			<h2>About the Investor</h2>
+			<p id="investorBio">A brief biography or description about the investor will appear here.</p>
+
+			<h2>Key Interests</h2>
+			<ul id="keyInterests">
+				<!-- Key interests will be dynamically populated -->
+			</ul>
+		</div>
+
+		<a href="search-investors.html" class="back-link">← Back to Search</a>
+	</div>
+
+	<script>
+		// Sample investor data
+		const investors = [
+			{
+				id: 1,
+				name: "John Doe",
+				image: "https://via.placeholder.com/150",
+				industry: "Technology",
+				location: "New York",
+				stage: "Seed",
+				investment: 50000,
+				bio: "John is a seasoned investor with a strong background in technology startups, focusing on innovation and scalable business models.",
+				interests: ["Artificial Intelligence", "Blockchain", "SaaS", "Cybersecurity"],
+			},
+			{
+				id: 2,
+				name: "Jane Smith",
+				image: "https://via.placeholder.com/150",
+				industry: "Healthcare",
+				location: "San Francisco",
+				stage: "Series A",
+				investment: 100000,
+				bio: "Jane specializes in healthcare investments, with a passion for startups tackling global health challenges.",
+				interests: ["Biotechnology", "Telemedicine", "Health Data Analytics"],
+			},
+			{
+				id: 3,
+				name: "Bob Johnson",
+				image: "https://via.placeholder.com/150",
+				industry: "Finance",
+				location: "Chicago",
+				stage: "Growth",
+				investment: 200000,
+				bio: "Bob has over 15 years of experience investing in financial services, with a focus on fintech and blockchain.",
+				interests: ["Fintech", "Insurtech", "Decentralized Finance"],
+			},
+			// Add more investors as needed
+		];
+
+		// Get the investor ID from the URL
+		const urlParams = new URLSearchParams(window.location.search);
+		const investorId = parseInt(urlParams.get("id"));
+
+		// Find the investor
+		const investor = investors.find(inv => inv.id === investorId);
+
+		// Populate the profile page with investor details
+		if (investor) {
+			document.getElementById("investorImage").src = investor.image;
+			document.getElementById("investorName").textContent = investor.name;
+			document.getElementById("investorIndustry").textContent = investor.industry;
+			document.getElementById("investorLocation").textContent = investor.location;
+			document.getElementById("investorStage").textContent = investor.stage;
+			document.getElementById("investorInvestment").textContent = `$${investor.investment.toLocaleString()}`;
+			document.getElementById("investorBio").textContent = investor.bio;
+
+			// Populate key interests
+			const keyInterestsList = document.getElementById("keyInterests");
+			investor.interests.forEach(interest => {
+				const li = document.createElement("li");
+				li.innerHTML = `<span>Interest:</span> ${interest}`;
+				keyInterestsList.appendChild(li);
+			});
+		} else {
+			document.body.innerHTML = `
+				<header>
+					<h1>Investor Profile</h1>
+				</header>
+				<div class="container">
+					<div class="profile-card">
+						<p>Investor not found. Please return to the <a href="search-investors.html">search page</a>.</p>
+					</div>
+				</div>
+			`;
+		}
+	</script>
+</body>
+
+</html>

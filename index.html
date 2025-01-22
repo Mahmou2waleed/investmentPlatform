@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Entrepreneur-Investor Platform</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		header {
+			background-color: #004aad;
+			color: white;
+			padding: 1rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header .logo {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		header nav {
+			display: flex;
+			gap: 1rem;
+		}
+
+		header nav a {
+			color: white;
+			text-decoration: none;
+			font-size: 1rem;
+		}
+
+		header .language-selector {
+			margin-left: auto;
+			font-size: 1rem;
+		}
+
+		.container {
+			text-align: center;
+			padding: 3rem 1rem;
+		}
+
+		.container h1 {
+			color: #333;
+			font-size: 2.5rem;
+		}
+
+		.button-group {
+			margin-top: 2rem;
+		}
+
+		.button-group button {
+			padding: 1rem 2rem;
+			font-size: 1.2rem;
+			margin: 0.5rem;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			color: white;
+		}
+
+		.button-group .entrepreneur {
+			background-color: #28a745;
+		}
+
+		.button-group .investor {
+			background-color: #007bff;
+		}
+
+		.stats {
+			background-color: #f9f9f9;
+			padding: 2rem 1rem;
+			text-align: center;
+		}
+
+		.stats h2 {
+			color: #333;
+			font-size: 2rem;
+		}
+
+		.stats .stat {
+			display: inline-block;
+			margin: 1rem;
+			font-size: 1.2rem;
+			color: #555;
+		}
+
+		.elite-projects {
+			background-color: #e8f0fe;
+			padding: 2rem 1rem;
+			text-align: center;
+		}
+
+		.elite-projects h2 {
+			color: #333;
+			font-size: 2rem;
+		}
+
+		.elite-projects .project {
+			margin: 1rem 0;
+			padding: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: white;
+		}
+
+		.elite-projects .project h3 {
+			margin: 0;
+			color: #007bff;
+			font-size: 1.5rem;
+		}
+
+		.elite-projects .project p {
+			margin: 0.5rem 0 0;
+			color: #555;
+		}
+
+		.top-projects {
+			background-color: #f4f4f4;
+			padding: 2rem 1rem;
+			text-align: center;
+		}
+
+		.top-projects h2 {
+			color: #333;
+			font-size: 2rem;
+		}
+
+		.top-projects .project {
+			margin: 1rem 0;
+			padding: 1rem;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			background-color: white;
+		}
+
+		.top-projects .project h3 {
+			margin: 0;
+			color: #28a745;
+			font-size: 1.5rem;
+		}
+
+		.top-projects .project p {
+			margin: 0.5rem 0 0;
+			color: #555;
+		}
+
+		.success-stories {
+			background-color: #f9f9f9;
+			padding: 2rem 1rem;
+			text-align: center;
+		}
+
+		.success-stories h2 {
+			color: #333;
+			font-size: 2rem;
+		}
+
+		.success-stories .story {
+			margin: 1rem 0;
+			padding: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: white;
+		}
+
+		.success-stories .story h3 {
+			margin: 0;
+			color: #28a745;
+			font-size: 1.5rem;
+		}
+
+		.success-stories .story p {
+			margin: 0.5rem 0 0;
+			color: #555;
+		}
+
+		footer {
+			background-color: #f1f1f1;
+			padding: 1rem;
+			text-align: center;
+			color: #666;
+			font-size: 0.9rem;
+		}
+
+		footer a {
+			color: #007bff;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="logo">Entrepreneur-Investor Platform</div>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Help</a>
+		</nav>
+		<div class="language-selector">
+			<a href="#">English</a> | <a href="#">عربي</a>
+		</div>
+	</header>
+
+	<div class="container">
+		<h1>Welcome to the Entrepreneur-Investor Platform</h1>
+		<p>Connect and grow your business or investment portfolio.</p>
+		<div class="button-group">
+			<button class="entrepreneur" onclick="navigateTo('entrepreneur')">Create Entrepreneur Profile</button>
+			<button class="investor" onclick="navigateTo('investor')">Create Investor Profile</button>
+		</div>
+		<p>Already have an account? <a href="login.html">Login</a></p>
+	</div>
+
+	<div class="stats">
+		<h2>Our Achievements</h2>
+		<div class="stat">
+			<strong>150+</strong>
+			<p>Projects Funded</p>
+		</div>
+		<div class="stat">
+			<strong>$10M+</strong>
+			<p>Invested Capital</p>
+		</div>
+		<div class="stat">
+			<strong>200+</strong>
+			<p>Active Entrepreneurs</p>
+		</div>
+		<div class="stat">
+			<strong>100+</strong>
+			<p>Active Investors</p>
+		</div>
+	</div>
+
+	<div class="elite-projects">
+		<h2>Elite Projects</h2>
+		<div class="project">
+			<h3>GreenTech Innovations</h3>
+			<p>Revolutionizing renewable energy solutions.</p>
+		</div>
+		<div class="project">
+			<h3>SmartHealth AI</h3>
+			<p>Transforming healthcare with artificial intelligence.</p>
+		</div>
+		<div class="project">
+			<h3>EcoBuild Ventures</h3>
+			<p>Sustainable construction technologies.</p>
+		</div>
+	</div>
+
+	<div class="top-projects">
+		<h2>Top Projects Gain</h2>
+		<div class="project">
+			<h3>AgroTech Solutions</h3>
+			<p>Increased revenue by 150% in the last quarter.</p>
+		</div>
+		<div class="project">
+			<h3>FinTech Horizon</h3>
+			<p>Achieved $2M in monthly recurring revenue.</p>
+		</div>
+		<div class="project">
+			<h3>BioLife Sciences</h3>
+			<p>Secured $5M in additional funding and expanded globally.</p>
+		</div>
+	</div>
+
+	<div class="success-stories">
+		<h2>Stories of Success</h2>
+		<div class="story">
+			<h3>Startup X - A $5M Journey</h3>
+			<p>Startup X secured $5M in funding through our platform and now leads the renewable energy market.</p>
+		</div>
+		<div class="story">
+			<h3>HealthCare Innovators</h3>
+			<p>An AI-based healthcare startup scaled globally after connecting with investors here.</p>
+		</div>
+		<div class="story">
+			<h3>AgriTech Success</h3>
+			<p>AgriTech Solutions revolutionized sustainable farming with help from our investor network.</p>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; 2025 Entrepreneur-Investor Platform. All rights reserved. <a href="#">Terms & Conditions</a> | <a
+				href="#">Privacy Policy</a></p>
+	</footer>
+
+	<script>
+		function navigateTo(profileType) {
+			if (profileType === 'entrepreneur') {
+				window.location.href = 'create-entrepreneur-profile.html';
+			} else if (profileType === 'investor') {
+				window.location.href = 'create-investor-profile.html';
+			}
+		}
+	</script>
+</body>
+
+</html>
